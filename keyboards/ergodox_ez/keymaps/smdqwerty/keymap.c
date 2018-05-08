@@ -13,20 +13,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |   =    |   1  |   2  |   3  |   4  |   5  | LEFT |           | RIGHT|   6  |   7  |   8  |   9  |   0  |   \    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | Tab    |   Q  |   W  |   E  |   R  |   T  |  L1  |           |  L2  |   Y  |   U  |   I  |   O  |   P  |   :    |
+ * | Tab    |   Q  |   W  |   E  |   R  |   T  |  L1  |           |  L2  |   Y  |   U  |   I  |   O  |   P  |  Bspc  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | L1     |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |  ;   | '/L2   |
+ * | L1     |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |  ;   | Enter  |
  * |--------+------+------+------+------+------| ESC  |           |  -   |------+------+------+------+------+--------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |  /   | RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |Ctrl  |  '"  |AltShf| Left | EISU |                                       | KANA |      |      |      | Enter |
+ *   |Ctrl  | Alt  |Spc/Cmd| Left| EISU |                                       | KANA |      |      |      |'/L2 |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | Alt  | LGui |       | Alt  | Tab   |
  *                                 ,------|------|------|       |------+--------+------.
- *                                 | Space|      | Home |       | PgUp |        |      |-
- *                                 | Cmd  |      |------|       |------| ESC    |Enter |
- *                                 |      |BkSp  | End  |       | PgDn |        |      |
+ *                                 | EISU |Space | Home |       | PgUp |        |Space |-
+ *                                 | Cmd  |      |------|       |------| Space  |Cmd   |
+ *                                 |      |      | End  |       | PgDn |        |      |
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -37,19 +37,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,         KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,       LT(SYMB, KC_NO),
         LT(SYMB, KC_NO),KC_A,         KC_S,   KC_D,   KC_F,   KC_G,
         KC_LSFT,        KC_Z,         KC_X,   KC_C,   KC_V,   KC_B,       KC_ESC,
-        CTL_T(KC_TRNS),   KC_QUOT,      LALT(KC_LSFT),  KC_LEFT,KC_EISU_MAC,
+        CTL_T(KC_TRNS), ALT_T(KC_APP),   GUI_T(KC_SPC),  KC_LEFT,KC_EISU_MAC,
                                               ALT_T(KC_APP),  KC_LGUI,
                                                               KC_HOME,
-                                       GUI_T(KC_SPC), KC_BSPC,KC_END,
+                                       GUI_T(KC_EISU_MAC), GUI_T(KC_SPC),KC_END,
         // right hand
              KC_RGHT,        KC_6,   KC_7,       KC_8,   KC_9,   KC_0,             JIS_BSLS,
-             LT(MDIA, KC_NO),KC_Y,   KC_U,       KC_I,   KC_O,   KC_P,             JIS_COLN,
-                             KC_H,   KC_J,       KC_K,   KC_L,   KC_SCLN,          LT(MDIA, KC_QUOT),
+             LT(MDIA, KC_NO),KC_Y,   KC_U,       KC_I,   KC_O,   KC_P,             KC_BSPC,
+                             KC_H,   KC_J,       KC_K,   KC_L,   KC_SCLN,          KC_ENT,
              KC_MINS,        KC_N,   KC_M,       KC_COMM,KC_DOT, KC_SLSH,          KC_RSFT,
-                                     KC_KANA_MAC,KC_TRNS,KC_TRNS,KC_TRNS,          KC_ENT,
+                                     KC_KANA_MAC,KC_TRNS,KC_TRNS,KC_TRNS,          LT(MDIA, KC_QUOT),
              KC_LALT,        KC_TAB,
              KC_PGUP,
-             KC_PGDN,KC_ESC, KC_ENT
+             KC_PGDN,GUI_T(KC_SPC), GUI_T(KC_SPC)
     ),
 /* Keymap 1: Symbol Layer
  *
