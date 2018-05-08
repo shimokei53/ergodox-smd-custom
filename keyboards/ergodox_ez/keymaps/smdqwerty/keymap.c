@@ -24,8 +24,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        ,-------------.       ,-------------.
  *                                        | Alt  | LGui |       | Alt  | Tab   |
  *                                 ,------|------|------|       |------+--------+------.
- *                                 | EISU |Space | Home |       | PgUp |        |KANA |-
- *                                 | Cmd  |      |------|       |------| Space  |Cmd   |
+ *                                 | EISU |Space | Home |       | PgUp | Space  |KANA |-
+ *                                 | Cmd  |Alt   |------|       |------| Alt    |Cmd   |
  *                                 |      |      | End  |       | PgDn |        |      |
  *                                 `--------------------'       `----------------------'
  */
@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         CTL_T(KC_TRNS), ALT_T(KC_APP),   GUI_T(KC_SPC),  KC_LEFT,KC_EISU_MAC,
                                               ALT_T(KC_APP),  KC_LGUI,
                                                               KC_HOME,
-                                       GUI_T(KC_EISU_MAC), GUI_T(KC_SPC),KC_END,
+                                       GUI_T(KC_EISU_MAC), ALT_T(KC_SPC),KC_END,
         // right hand
              KC_RGHT,        KC_6,   KC_7,       KC_8,   KC_9,   KC_0,             JIS_BSLS,
              LT(MDIA, KC_NO),KC_Y,   KC_U,       KC_I,   KC_O,   KC_P,             KC_BSPC,
@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                      KC_KANA_MAC,KC_TRNS,KC_TRNS,KC_TRNS,          LT(MDIA, KC_QUOT),
              KC_LALT,        KC_TAB,
              KC_PGUP,
-             KC_PGDN,GUI_T(KC_SPC), GUI_T(KC_KANA_MAC)
+             KC_PGDN,ALT_T(KC_SPC), GUI_T(KC_KANA_MAC)
     ),
 /* Keymap 1: Symbol Layer
  *
