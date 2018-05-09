@@ -6,6 +6,5 @@
 # How to compile
 
 ```
-$ cd keyboards/ergodox/ez
-$ make teensy keymap=hgqwerty
+$ make ergodox_ez:smdqwerty
 ```
