@@ -24,8 +24,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        ,-------------.       ,-------------.
  *                                        | Alt  | LGui |       | Alt  | Tab   |
  *                                 ,------|------|------|       |------+--------+------.
- *                                 | EISU |Space | Home |       | PgUp | Space  |KANA |-
- *                                 | Cmd  |Alt   |------|       |------| Alt    |Cmd   |
+ *                                 | EISU |Space | Home |       | PgUp | Space  |KANA  |
+ *                                 | Cmd  |Alt   |------|       |------| L2     |Cmd   |
  *                                 |      |      | End  |       | PgDn |        |      |
  *                                 `--------------------'       `----------------------'
  */
@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                      KC_KANA_MAC,KC_TRNS,KC_TRNS,KC_TRNS,          LT(MDIA, KC_QUOT),
              KC_LALT,        KC_TAB,
              KC_PGUP,
-             KC_PGDN,ALT_T(KC_SPC), GUI_T(KC_KANA_MAC)
+             KC_PGDN,LT(MDIA, KC_SPC),, GUI_T(KC_KANA_MAC)
     ),
 /* Keymap 1: Symbol Layer
  *
@@ -183,3 +183,4 @@ void matrix_scan_user(void) {
     }
 
 };
+
